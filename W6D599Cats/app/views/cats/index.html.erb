@@ -2,11 +2,13 @@
 
 <ul>
     <% @cats.each do |cat| %>
-        <li> <%=cat.name%> </li>
-        <li> <%=cat.sex%> </li>
-        <li> <%=cat.color%> </li>
-        <li> <%=cat.birth_date%> </li>
+        <li> Name: <%=cat.name%> </li>
+        <li> Gender: <%=cat.sex%> </li>
+        <li> Color: <%=cat.color%> </li>
+        <li> Birth Date: <%=cat.birth_date%> </li>
         <br>
         <br>
     <%end%>     
 </ul>
+
+<a href="<%= cats_url %>"> Show all Cats</a>

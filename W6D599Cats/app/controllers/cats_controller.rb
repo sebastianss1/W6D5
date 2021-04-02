@@ -2,7 +2,7 @@ class CatsController < ApplicationController
 
     def index 
         # debugger
-        @cats = Cat.all 
+        @cats = Cat.all
         render :index
     end 
 

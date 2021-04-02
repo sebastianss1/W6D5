@@ -1,0 +1,32 @@
+<h1> <%= @cat.name %> </h1>
+
+<table>
+    <thead>
+        <tr>
+            <th colspan="2">Atributes</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td> 
+                Name:
+                <br>
+                Gender:
+                <br>  
+                Color: 
+                <br>
+                Birth Date: 
+            </td>
+            <td>
+                <%=@cat.name%>
+                <br>
+                <%=@cat.sex%>
+                <br>
+                <%=@cat.color%> 
+                <br>
+                <%=@cat.birth_date%>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
