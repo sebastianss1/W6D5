@@ -1,0 +1,17 @@
+<h1> New Cat! </h1>
+
+<form action="<% new_cat_url %>" method = "post">
+    <label> Name 
+        <input type="text" name="cats[name]" value="<%=cat.name%>" >
+    </label>
+
+    <label> Sex 
+        <input type="radio" id = "male" name="cats[sex]" value="<%=cat.sex%>" >
+            <label for="male">Male</label><br>
+        <input type="radio" id = "female" name="cats[sex]" value="<%=cat.sex%>" >
+                <label for="female">Female</label><br>
+    </label>
+
+
+</form >
+
