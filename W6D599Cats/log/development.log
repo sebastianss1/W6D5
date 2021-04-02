@@ -1341,3 +1341,34 @@ DETAIL:  Failing row contains (7, 2021-03-30, null, travis, ,  , 2021-04-02 21:1
   app/controllers/cats_controller.rb:23:in `create'
 
 Started POST "/__better_errors/31705bed691258c4/variables" for ::1 at 2021-04-02 17:19:39 -0400
+Started GET "/cats/new" for ::1 at 2021-04-02 17:25:01 -0400
+Processing by CatsController#new as HTML
+  Rendering cats/new.html.erb within layouts/application
+  Rendered cats/_form.html.erb (17.3ms)
+  Rendered cats/new.html.erb within layouts/application (40.1ms)
+Completed 200 OK in 126ms (Views: 100.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/cats" for ::1 at 2021-04-02 17:25:07 -0400
+Processing by CatsController#create as HTML
+  Parameters: {"cat"=>{"name"=>"sdafasdf", "sex"=>"", "color"=>"", "birth_date"=>"2021-04-14", "description"=>" asdfasdf"}}
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/cats_controller.rb:23
+  [1m[36mCat Create (22.0ms)[0m  [1m[32mINSERT INTO "cats" ("birth_date", "color", "name", "sex", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["birth_date", "2021-04-14"], ["color", ""], ["name", "sdafasdf"], ["sex", ""], ["description", " asdfasdf"], ["created_at", "2021-04-02 21:25:07.397521"], ["updated_at", "2021-04-02 21:25:07.397521"]]
+  ↳ app/controllers/cats_controller.rb:23
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/cats_controller.rb:23
+Redirected to http://localhost:3000/cats/8
+Completed 302 Found in 41ms (ActiveRecord: 24.5ms)
+
+
+Started GET "/cats/8" for ::1 at 2021-04-02 17:25:07 -0400
+Processing by CatsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mCat Load (4.9ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/cats_controller.rb:10
+  Rendering cats/show.html.erb within layouts/application
+  Rendered cats/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 37ms (Views: 17.2ms | ActiveRecord: 7.1ms)
+
+

@@ -28,13 +28,17 @@
     </label>
     <br> <br>
 
+
+
     <label for ="colors" > Color </label> <br>
-        <select id = "colors">
+        <select id = "colors" name = "cat[color]" value = <%cat.color%>>
             <option disabled selected > -- Select a Color -- </option>
-            <option  name ="cat[color]" value="white">White</option>
-            <option name ="cat[color]" value="black">Black</option>
-            <option  name ="cat[color]" value="striped">Striped</option>
-            <option  name ="cat[color]" value="orange">Orange</option>
+            <% CAT_COLOR.each do |cat_color|%>
+                <option>
+                <%= cat_color%> 
+                value = <%="cat_color"%>
+                </option>
+            <%end%>
         </select>
 
     <br> <br>
